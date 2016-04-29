@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d9f03fc-226e-49f3-ac6a-4024d9636dda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/gvodPartialsModule.js" afterPath="$PROJECT_DIR$/partials/gvodPartialsModule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/partial.html" afterPath="$PROJECT_DIR$/partials/partial.html" />
     </list>
     <ignored path="gvodui_bower.iws" />
@@ -70,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/partials/partial.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -300,12 +299,12 @@
       <option name="presentableId" value="Default" />
       <updated>1461924313787</updated>
       <workItem from="1461924315063" duration="73000" />
-      <workItem from="1461924391245" duration="2551000" />
+      <workItem from="1461924391245" duration="2704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2624000" />
+    <option name="totallyTimeSpent" value="2777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1134" extended-state="6" />
@@ -497,7 +496,7 @@
     <entry file="file://$PROJECT_DIR$/partials/partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding />
         </state>
       </provider>
