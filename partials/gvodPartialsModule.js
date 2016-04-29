@@ -165,6 +165,13 @@ angular.module('partialsApplication').controller('RestStatusController', ['Backe
 
 }]);
 
+angular.module('partialsApplication').controller('PathController', ['$location', function ($location) {
+
+    var self = this;
+    self.path = $location.path();
+
+}]);
+
 angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', function (PartialsStateService) {
 
     var self = this;

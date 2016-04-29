@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d9f03fc-226e-49f3-ac6a-4024d9636dda" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/gvodPartialsModule.js" afterPath="$PROJECT_DIR$/partials/gvodPartialsModule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/partial.html" afterPath="$PROJECT_DIR$/partials/partial.html" />
     </list>
     <ignored path="gvodui_bower.iws" />
@@ -46,8 +47,8 @@
       <file leaf-file-name="gvodPartialsModule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/gvodPartialsModule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="154" column="165" selection-start-line="154" selection-start-column="165" selection-end-line="154" selection-end-column="165" />
+            <state relative-caret-position="573">
+              <caret line="170" column="33" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -68,8 +69,8 @@
       <file leaf-file-name="partial.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partials/partial.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+            <state relative-caret-position="120">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -137,10 +138,10 @@
         <option value="$PROJECT_DIR$/partials/libraryAdd.html" />
         <option value="$PROJECT_DIR$/partials/getLibraryElement.html" />
         <option value="$PROJECT_DIR$/partials/getLibraryContents.html" />
-        <option value="$PROJECT_DIR$/partials/gvodPartialsModule.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/partials/state.html" />
         <option value="$PROJECT_DIR$/partials/reststatus.html" />
+        <option value="$PROJECT_DIR$/partials/gvodPartialsModule.js" />
         <option value="$PROJECT_DIR$/partials/partial.html" />
       </list>
     </option>
@@ -299,12 +300,12 @@
       <option name="presentableId" value="Default" />
       <updated>1461924313787</updated>
       <workItem from="1461924315063" duration="73000" />
-      <workItem from="1461924391245" duration="1952000" />
+      <workItem from="1461924391245" duration="2551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2025000" />
+    <option name="totallyTimeSpent" value="2624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1134" extended-state="6" />
@@ -443,16 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/gvodPartialsModule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="154" column="165" selection-start-line="154" selection-start-column="165" selection-end-line="154" selection-end-column="165" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/getLibraryElement.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -493,10 +484,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/partials/gvodPartialsModule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="170" column="33" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/partials/partial.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+        <state relative-caret-position="120">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding />
         </state>
       </provider>
