@@ -1,6 +1,6 @@
 <div class="container" ng-controller="PathController as pc">
-        <div data-ng-include src="{{pc.path}}"></div>
         <div data-ng-include datasrc="{{pc.path}}"></div>
+        <div data-ng-include datasrc="{{pc.path + '/getLibraryElement.html'}}"></div>
         <div data-ng-include datasrc="{{pc.path + '/libraryAdd.html'}}"> </div>
         <div data-ng-include datasrc="{{pc.path + '/upload.html'}}"></div>
         <div data-ng-include datasrc="{{pc.path + '/download.html'}}"></div>
