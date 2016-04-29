@@ -6,11 +6,11 @@
 
 angular.module('partialsApplication', []);
 
-angular.module('partialsApplication').controller('Downloader', ['BackendService','PartialsControllersService', function (BackendService,PartialsControllersService) {
+angular.module('partialsApplication').controller('DownloaderController', ['BackendService','PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.filename = PartialsControllersService.filename;
-        self.identifier = PartialsControllersService.identifier;
+        self.filename = PartialsStateService.filename;
+        self.identifier = PartialsStateService.identifier;
         self.result;
         self.downloading = false;
 
@@ -25,11 +25,11 @@ angular.module('partialsApplication').controller('Downloader', ['BackendService'
         };
 
     }]);
-angular.module('partialsApplication').controller('Uploader', ['BackendService', 'PartialsControllersService', function (BackendService,PartialsControllersService) {
+angular.module('partialsApplication').controller('UploaderController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.filename = PartialsControllersService.filename;
-        self.identifier = PartialsControllersService.identifier;
+        self.filename = PartialsStateService.filename;
+        self.identifier = PartialsStateService.identifier;
         self.result;
         self.uploading = false;
 
@@ -44,11 +44,11 @@ angular.module('partialsApplication').controller('Uploader', ['BackendService', 
         };
 
     }]);
-angular.module('partialsApplication').controller('Stoper', ['BackendService', 'PartialsControllersService', function (BackendService,PartialsControllersService) {
+angular.module('partialsApplication').controller('StoperController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.filename = PartialsControllersService.filename;
-        self.identifier = PartialsControllersService.identifier;
+        self.filename = PartialsStateService.filename;
+        self.identifier = PartialsStateService.identifier;
         self.result;
         self.stoped = false;
 
@@ -64,11 +64,11 @@ angular.module('partialsApplication').controller('Stoper', ['BackendService', 'P
 
     }]);
 
-angular.module('partialsApplication').controller('Library', ['BackendService', 'PartialsControllersService', function (BackendService, PartialsControllersService) {
+angular.module('partialsApplication').controller('LibraryController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.identifier = PartialsControllersService.identifier;
-        self.filename = PartialsControllersService.filename;
+        self.identifier = PartialsStateService.identifier;
+        self.filename = PartialsStateService.filename;
         self.uri;
         self.size;
         self.description;
@@ -128,8 +128,8 @@ angular.module('partialsApplication').controller('Library', ['BackendService', '
                     break;
             }
 
-            PartialsControllersService.filename = name;
-            PartialsControllersService.identifier = identifier;
+            PartialsStateService.filename = name;
+            PartialsStateService.identifier = identifier;
             
             if(self.showView.length === 0){
                 self.showView = new Array(self.result.data.contents.length);
@@ -151,11 +151,43 @@ angular.module('partialsApplication').controller('Library', ['BackendService', '
 
     }]);
 
-angular.module('partialsApplication').factory('PartialsControllersService',[function(){
+
+angular.module('partialsApplication').controller('RestStatusController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
+
+    var self = this;
+    self.result;
+
+    self.checkStatus = function(){
+        BackendService.checkStatus(PartialsStateService.url,PartialsStateService.port).then(function(result){
+            self.result = result;
+        })
+    };
+
+}]);
+
+angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', function (PartialsStateService) {
+
+    var self = this;
+    self.url = PartialsStateService.url;
+    self.port = PartialsStateService.port;
+
+    self.setURL = function(url){
+        PartialsStateService.url = url;
+    }
+
+    self.setPORT = function(port){
+        PartialsStateService.port = port;
+    }
+
+}]);
+
+angular.module('partialsApplication').factory('PartialsStateService',[function(){
         
         var self = this;
         self.identifier = "";
         self.filename = "";
+        self.url = "";
+        self.port = "";
         
         return self;
         
