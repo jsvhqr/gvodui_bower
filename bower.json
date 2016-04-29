@@ -5,11 +5,11 @@
     "ignore": [
         "app",
         "bower_components",
-	".yo-rc.json"
+	".yo-rc.json",
         "node_modules",
         ".bowerrc",
         ".gitignore",
-	".git"
+	".git",
         "src",
         "test",
         ".babelrc",
