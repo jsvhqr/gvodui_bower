@@ -1,10 +1,10 @@
 <div class="container" ng-controller="PathController as pc">
-        <div ng-include="{{pc.path + '/getLibraryContents.html'}}"></div>
-        <div ng-include="{{pc.path + '/getLibraryElement.html'}}"></div>
-        <div ng-include="{{pc.path + '/libraryAdd.html'}}"> </div>
-        <div ng-include="{{pc.path + '/upload.html'}}"></div>
-        <div ng-include="{{pc.path + './download.html'}}"></div>
-        <div ng-include="{{pc.path + './stop.html'}}"></div>
-        <div ng-include="{{pc.path + './reststatus.html'}}"></div>
-        <div ng-include="{{pc.path + './state.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + '/getLibraryContents.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + '/getLibraryElement.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + '/libraryAdd.html'}}"> </div>
+        <div data-ng-include datasrc="{{pc.path + '/upload.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + './download.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + './stop.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + './reststatus.html'}}"></div>
+        <div data-ng-include datasrc="{{pc.path + './state.html'}}"></div>
 </div>
