@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d9f03fc-226e-49f3-ac6a-4024d9636dda" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.editorconfig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/download.html" afterPath="$PROJECT_DIR$/partials/download.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/getLibraryContents.html" afterPath="$PROJECT_DIR$/partials/getLibraryContents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/getLibraryElement.html" afterPath="$PROJECT_DIR$/partials/getLibraryElement.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/gvodPartialsModule.js" afterPath="$PROJECT_DIR$/partials/gvodPartialsModule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/libraryAdd.html" afterPath="$PROJECT_DIR$/partials/libraryAdd.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/partial.html" afterPath="$PROJECT_DIR$/partials/partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/stop.html" afterPath="$PROJECT_DIR$/partials/stop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/upload.html" afterPath="$PROJECT_DIR$/partials/upload.html" />
     </list>
     <ignored path="gvodui_bower.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,17 +65,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partial.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="partial.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partials/partial.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+            <state relative-caret-position="15">
+              <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reststatus.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reststatus.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/reststatus.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -148,10 +138,10 @@
         <option value="$PROJECT_DIR$/partials/getLibraryElement.html" />
         <option value="$PROJECT_DIR$/partials/getLibraryContents.html" />
         <option value="$PROJECT_DIR$/partials/gvodPartialsModule.js" />
-        <option value="$PROJECT_DIR$/partials/partial.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/partials/state.html" />
         <option value="$PROJECT_DIR$/partials/reststatus.html" />
+        <option value="$PROJECT_DIR$/partials/partial.html" />
       </list>
     </option>
   </component>
@@ -309,12 +299,12 @@
       <option name="presentableId" value="Default" />
       <updated>1461924313787</updated>
       <workItem from="1461924315063" duration="73000" />
-      <workItem from="1461924391245" duration="1750000" />
+      <workItem from="1461924391245" duration="1952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1823000" />
+    <option name="totallyTimeSpent" value="2025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1134" extended-state="6" />
@@ -479,14 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -507,6 +489,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
           <folding />
         </state>
       </provider>
