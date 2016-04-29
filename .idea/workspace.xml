@@ -68,8 +68,8 @@
       <file leaf-file-name="partial.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partials/partial.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="36" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="36" />
+            <state relative-caret-position="120">
+              <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -299,12 +299,12 @@
       <option name="presentableId" value="Default" />
       <updated>1461924313787</updated>
       <workItem from="1461924315063" duration="73000" />
-      <workItem from="1461924391245" duration="4034000" />
+      <workItem from="1461924391245" duration="4219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4107000" />
+    <option name="totallyTimeSpent" value="4292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1134" extended-state="6" />
@@ -495,8 +495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/partials/partial.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="36" />
+        <state relative-caret-position="120">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
           <folding />
         </state>
       </provider>
