@@ -1,3 +1,10 @@
-<div>
-    reststatus
+<div class="jumbotron" ng-controller="RestStatusController as status">
+
+
+    <button class="btn btn-default">Check Rest Status</button>
+
+    <i style="color:green" class="glyphicon glyphicon-off" ng-if="status.result.alive"></i>
+
+    <i style="color:red" class="glyphicon glyphicon-off" ng-if="status.result.dead"></i>
+
 </div>

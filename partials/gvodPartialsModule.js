@@ -159,7 +159,7 @@ angular.module('partialsApplication').controller('RestStatusController', ['Backe
     self.result;
 
     self.checkStatus = function(){
-        BackendService.checkStatus(PartialsStateService.url,PartialsStateService.port).then(function(result){
+        BackendService.checkStatus().then(function(result){
             self.result = result;
         })
     };
