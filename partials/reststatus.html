@@ -1,7 +1,7 @@
 <div class="jumbotron" ng-controller="RestStatusController as status">
 
 
-    <button class="btn btn-default">Check Rest Status</button>
+    <button class="btn btn-default" ng-click="status.checkStatus()">Check Rest Status</button>
 
     <i style="color:green" class="glyphicon glyphicon-off" ng-if="status.result.alive"></i>
 
