@@ -6,6 +6,10 @@
 
 angular.module('partialsApplication', []);
 
+
+angular.module('partialsApplication', []).use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+
+
 angular.module('partialsApplication').controller('DownloaderController', ['BackendService','PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
@@ -162,13 +166,6 @@ angular.module('partialsApplication').controller('RestStatusController', ['Backe
             self.result = result;
         })
     };
-
-}]);
-
-angular.module('partialsApplication').controller('PathController', ['$location', function ($location) {
-
-    var self = this;
-    self.path = $location.path();
 
 }]);
 
