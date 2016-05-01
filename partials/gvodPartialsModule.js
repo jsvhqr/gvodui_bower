@@ -7,9 +7,6 @@
 angular.module('partialsApplication', []);
 
 
-angular.module('partialsApplication', []).use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'));
-
-
 angular.module('partialsApplication').controller('DownloaderController', ['BackendService','PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
