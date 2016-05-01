@@ -194,13 +194,13 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
         
     }]);
 
-angular.module('partialsApplication').factory('BackendService', ['$http', function ($http) {
+angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
         var service = {
             download: function (json) {
                 return $http(
                         {
                             method: 'PUT',
-                            url: 'http://bbc1.sics.se:18183/torrent/download',
+                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/torrent/download',
                             data: json
                         });
             },
@@ -208,7 +208,7 @@ angular.module('partialsApplication').factory('BackendService', ['$http', functi
                 return $http(
                         {
                             method: 'PUT',
-                            url: 'http://bbc1.sics.se:18183/torrent/upload',
+                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/torrent/upload',
                             data: json
                         });
             },
@@ -216,7 +216,7 @@ angular.module('partialsApplication').factory('BackendService', ['$http', functi
                 return $http(
                         {
                             method: 'PUT',
-                            url: 'http://bbc1.sics.se:18183/torrent/stop',
+                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/torrent/stop',
                             data: json
                         });
             },
@@ -224,14 +224,14 @@ angular.module('partialsApplication').factory('BackendService', ['$http', functi
                 return $http(
                         {
                             method: 'GET',
-                            url: 'http://bbc1.sics.se:18183/library/contents'
+                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/library/contents'
                         });
             },
             addFile: function(json){
                 return $http(
                         {
                             method: 'PUT',
-                            url: 'http://bbc1.sics.se:18183/library/add',
+                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/library/add',
                             data: json
                         });
             },
@@ -239,9 +239,17 @@ angular.module('partialsApplication').factory('BackendService', ['$http', functi
                 return $http(
                         {
                             method: 'PUT',
-                            url: 'http://bbc1.sics.se:18183/library/element',
+                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/library/element',
                             data: json
                         });
+            },
+            checkStatus:  function () {
+                return $http(
+                    {
+                        method: 'GET',
+                        url: PartialsStateService.url + ':' + PartialsStateService.port + '/status'
+                    });
+
             }
             
 
