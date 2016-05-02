@@ -184,14 +184,17 @@ angular.module('partialsApplication').controller('RestHostController', ['Partial
 
 angular.module('partialsApplication').factory('PartialsStateService',[function(){
         
-        var self = this;
-        self.identifier = "";
-        self.filename = "";
-        self.url = "http://bbc1.sics.se";
-        self.port = "18180";
+        var state = {
+
+            identifier : "",
+            filename : "",
+            url :"http://bbc1.sics.se",
+            port : "18180"
+
+        };
 
 
-        return self;
+        return state;
         
     }]);
 
@@ -202,7 +205,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
             urlBase: null,
 
             getBackend: function () {
-                return urlBase;
+                return this.urlBase;
             },
 
             setBackend: function (url, port) {
