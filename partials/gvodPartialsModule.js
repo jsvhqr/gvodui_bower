@@ -7,18 +7,19 @@
 angular.module('partialsApplication', []);
 
 
-angular.module('partialsApplication').controller('DownloaderController', ['BackendService','PartialsStateService', function (BackendService, PartialsStateService) {
+angular.module('partialsApplication').controller('DownloaderController', ['partialsBackendServiceFactory','partialsServiceStateFactory', function (partialsBackendServiceFactory, partialsServiceStateFactory) {
 
         var self = this;
-        self.filename = PartialsStateService.getFilename();
-        self.identifier = PartialsStateService.getIdentifier();
+        self.filename = partialsServiceStateFactory.getFilename();
+        self.identifier = partialsServiceStateFactory.getIdentifier();
+
         self.result;
         self.downloading = false;
 
 
         self.download = function () {
             var JSONObj = {"name ": self.filename, "identifier": self.identifier};
-            BackendService.download(JSONObj).then(function (result) {
+            partialsBackendServiceFactory.download(JSONObj).then(function (result) {
                 self.result = result;
                 self.downloading = true;
             });
@@ -26,18 +27,19 @@ angular.module('partialsApplication').controller('DownloaderController', ['Backe
         };
 
     }]);
-angular.module('partialsApplication').controller('UploaderController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
+angular.module('partialsApplication').controller('UploaderController', ['partialsBackendServiceFactory', 'partialsServiceStateFactory', function (partialsBackendServiceFactory, partialsServiceStateFactory) {
 
         var self = this;
-        self.filename = PartialsStateService.getFilename();
-        self.identifier = PartialsStateService.getIdentifier();
+        self.filename = partialsServiceStateFactory.getFilename();
+        self.identifier = partialsServiceStateFactory.getIdentifier();
+
         self.result;
         self.uploading = false;
 
 
         self.upload = function () {
             var JSONObj = {"name ": self.filename, "identifier": self.identifier};
-            BackendService.upload(JSONObj).then(function (result) {
+            partialsBackendServiceFactory.upload(JSONObj).then(function (result) {
                 self.result = result;
                 self.uploading = true;
             });
@@ -45,18 +47,19 @@ angular.module('partialsApplication').controller('UploaderController', ['Backend
         };
 
     }]);
-angular.module('partialsApplication').controller('StoperController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
+angular.module('partialsApplication').controller('StoperController', ['partialsBackendServiceFactory', 'partialsServiceStateFactory', function (partialsBackendServiceFactory, partialsServiceStateFactory) {
 
         var self = this;
-        self.filename = PartialsStateService.getFilename();
-        self.identifier = PartialsStateService.getIdentifier();
+        self.filename = partialsServiceStateFactory.getFilename();
+        self.identifier = partialsServiceStateFactory.getIdentifier();
+
         self.result;
         self.stoped = false;
 
 
         self.stop = function () {
             var JSONObj = {"name ": self.filename, "identifier": self.identifier};
-            BackendService.stop(JSONObj).then(function (result) {
+            partialsBackendServiceFactory.stop(JSONObj).then(function (result) {
                 self.result = result;
                 self.stoped = true;
             });
@@ -65,16 +68,18 @@ angular.module('partialsApplication').controller('StoperController', ['BackendSe
 
     }]);
 
-angular.module('partialsApplication').controller('LibraryController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
+angular.module('partialsApplication').controller('LibraryController', ['partialsBackendServiceFactory', 'partialsServiceStateFactory', function (partialsBackendServiceFactory, partialsServiceStateFactory) {
 
         var self = this;
-        self.identifier = PartialsStateService.getIdentifier();
-        self.filename = PartialsStateService.getFilename();
+        self.identifier = partialsServiceStateFactory.getIdentifier();
+        self.filename = partialsServiceStateFactory.getFilename();
+
         self.uri;
         self.size;
         self.description;
         self.result;
         self.viewToLoad;
+
         self.showView = new Array(0);
         self.status = false;
         self.addFile = function () {
@@ -89,7 +94,7 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
 
             var JSONObj = {"identifier": self.identifier, "fileInfo": fileInfo};
 
-            BackendService.addFile(JSONObj).then(function (result) {
+            partialsBackendServiceFactory.addFile(JSONObj).then(function (result) {
                 self.result = result;
             });
 
@@ -97,7 +102,7 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
 
         self.getLibraryContents = function () {
 
-            BackendService.getLibraryContents().then(function (result) {
+            partialsBackendServiceFactory.getLibraryContents().then(function (result) {
                 self.result = result;
             });
 
@@ -105,7 +110,7 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
 
         self.getLibraryElement = function () {
             var JSONObj = {"identifier": self.identifier, "name": self.filename};
-            BackendService.getLibraryElement(JSONObj).then(function (result) {
+            partialsBackendServiceFactory.getLibraryElement(JSONObj).then(function (result) {
                 self.result = result;
             });
             self.status = true;
@@ -129,8 +134,8 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
                     break;
             }
 
-            PartialsStateService.setFilename(name);
-            PartialsStateService.setIdentifier(identifier);
+            partialsServiceStateFactory.setFilename(name);
+            partialsServiceStateFactory.setIdentifier(identifier);
             
             if(self.showView.length === 0){
                 self.showView = new Array(self.result.data.contents.length);
@@ -152,29 +157,29 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
 
     }]);
 
-angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', 'BackendService',  function (PartialsStateService,BackendService) {
+angular.module('partialsApplication').controller('RestHostController', ['partialsServiceStateFactory', 'partialsBackendServiceFactory',  function (partialsServiceStateFactory, partialsBackendServiceFactory) {
 
     var self = this;
-    self.url = PartialsStateService.getURL();
-    self.port = PartialsStateService.getPort();
+    self.url = partialsServiceStateFactory.getURL();
+    self.port = partialsServiceStateFactory.getPort();
 
     self.setURL = function(){
-        PartialsStateService.setURL(self.url);
+        partialsServiceStateFactory.setURL(self.url);
     }
 
     self.setPORT = function(){
-        PartialsStateService.setPort(self.port);
+        partialsServiceStateFactory.setPort(self.port);
     }
 
     self.checkStatus = function(){
-        BackendService.checkStatus().then(function(result){
+        partialsBackendServiceFactory.checkStatus().then(function(result){
             self.result = result;
         })
     };
 
 }]);
 
-angular.module('partialsApplication').factory('PartialsStateService',[function(){
+angular.module('partialsApplication').factory('partialsServiceStateFactory',[function(){
         
         var state = {
 
@@ -222,55 +227,55 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
         
     }]);
 
-angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
+angular.module('partialsApplication').factory('partialsBackendServiceFactory', ['partialsServiceStateFactory','$http', function (partialsServiceStateFactory, $http) {
 
         var service = {
 
             download: function (json) {
                 return $http({
                             method: 'PUT',
-                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/download',
+                            url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/torrent/download',
                             data: json
                         });
             },
             upload: function (json) {
                 return $http({
                             method: 'PUT',
-                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/upload',
+                            url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/torrent/upload',
                             data: json
                         });
             },
             stop: function (json) {
                 return $http({
                             method: 'PUT',
-                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/stop',
+                            url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/torrent/stop',
                             data: json
                         });
             },
             getLibraryContents: function () {
                 return $http({
                             method: 'GET',
-                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/contents'
+                            url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/library/contents'
                         });
             },
             addFile: function(json){
                 return $http({
                             method: 'PUT',
-                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/add',
+                            url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/library/add',
                             data: json
                         });
             },
             getLibraryElement: function(json){
                 return $http({
                             method: 'PUT',
-                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/element',
+                            url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/library/element',
                             data: json
                         });
             },
             checkStatus:  function () {
                 return $http({
                         method: 'GET',
-                        url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/status'
+                        url: partialsServiceStateFactory.getURL() + ":" + partialsServiceStateFactory.getPort() + '/status'
                     });
 
             }
