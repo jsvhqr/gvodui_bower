@@ -185,7 +185,7 @@ angular.module('partialsApplication').factory('partialsServiceStateFactory',[fun
 
             identifier : "",
             filename : "",
-            url :"localhost",
+            url :"http://localhost",
             port : "8080",
 
             setIdentifier : function (id) {
