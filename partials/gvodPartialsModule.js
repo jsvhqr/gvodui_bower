@@ -152,7 +152,7 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
 
     }]);
 
-angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', function (PartialsStateService) {
+angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', 'BackendService',  function (PartialsStateService,BackendService) {
 
     var self = this;
     self.url = PartialsStateService.getURL();
