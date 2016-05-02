@@ -24,9 +24,9 @@
 
             <button class="btn btn-default" ng-click="host.checkStatus()">Check Rest Status</button>
 
-            <i style="color:green" class="glyphicon glyphicon-off" ng-if="host.result.data.statusText === 'OK'"></i>
+            <i style="color:green" class="glyphicon glyphicon-off" ng-if="host.result.data.statusText == 'OK'"></i>
 
-            <i style="color:red" class="glyphicon glyphicon-off" ng-if="host.result.statusText !== 'OK'"></i>
+            <i style="color:red" class="glyphicon glyphicon-off" ng-if="host.result.statusText !== 'OK'" style="padding-left: 5px;"></i>
 
         </div>
 
