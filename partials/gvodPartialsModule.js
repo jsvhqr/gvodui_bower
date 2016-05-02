@@ -196,8 +196,10 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
 
 angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
 
-        var urlBase = PartialsStateService.url + ":" + PartialsStateService.port;
         var service = {
+
+
+            urlBase : PartialsStateService.url + ":" + PartialsStateService.port,
 
             download: function (json) {
                 return $http(
