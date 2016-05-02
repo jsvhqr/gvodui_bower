@@ -172,12 +172,12 @@ angular.module('partialsApplication').controller('RestHostController', ['Partial
     self.url = PartialsStateService.url;
     self.port = PartialsStateService.port;
 
-    self.setURL = function(url){
-        PartialsStateService.url = url;
+    self.setURL = function(){
+        PartialsStateService.url = self.url;
     }
 
-    self.setPORT = function(port){
-        PartialsStateService.port = port;
+    self.setPORT = function(){
+        PartialsStateService.port = self.port;
     }
 
 }]);
@@ -195,15 +195,15 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
     }]);
 
 angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
-        var service = {
 
-            backend: PartialsStateService.url + ":" + PartialsStateService.port,
+        var urlBase = PartialsStateService.url + ":" + PartialsStateService.port;
+        var service = {
 
             download: function (json) {
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.backend + '/torrent/download',
+                            url: urlBase + '/torrent/download',
                             data: json
                         });
             },
@@ -211,7 +211,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.backend + '/torrent/upload',
+                            url: urlBase + '/torrent/upload',
                             data: json
                         });
             },
@@ -219,7 +219,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.backend + '/torrent/stop',
+                            url: urlBase + '/torrent/stop',
                             data: json
                         });
             },
@@ -227,14 +227,14 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'GET',
-                            url: this.backend + '/library/contents'
+                            url: urlBase + '/library/contents'
                         });
             },
             addFile: function(json){
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.backend + '/library/add',
+                            url: urlBase + '/library/add',
                             data: json
                         });
             },
@@ -242,7 +242,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.backend + '/library/element',
+                            url: urlBase + '/library/element',
                             data: json
                         });
             },
@@ -250,7 +250,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                     {
                         method: 'GET',
-                        url: this.backend + '/status'
+                        url: urlBase + '/status'
                     });
 
             }
