@@ -10,8 +10,8 @@ angular.module('partialsApplication', []);
 angular.module('partialsApplication').controller('DownloaderController', ['BackendService','PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.filename = PartialsStateService.filename;
-        self.identifier = PartialsStateService.identifier;
+        self.filename = PartialsStateService.getFilename();
+        self.identifier = PartialsStateService.getIdentifier();
         self.result;
         self.downloading = false;
 
@@ -29,8 +29,8 @@ angular.module('partialsApplication').controller('DownloaderController', ['Backe
 angular.module('partialsApplication').controller('UploaderController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.filename = PartialsStateService.filename;
-        self.identifier = PartialsStateService.identifier;
+        self.filename = PartialsStateService.getFilename();
+        self.identifier = PartialsStateService.getIdentifier();
         self.result;
         self.uploading = false;
 
@@ -48,8 +48,8 @@ angular.module('partialsApplication').controller('UploaderController', ['Backend
 angular.module('partialsApplication').controller('StoperController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.filename = PartialsStateService.filename;
-        self.identifier = PartialsStateService.identifier;
+        self.filename = PartialsStateService.getFilename();
+        self.identifier = PartialsStateService.getIdentifier();
         self.result;
         self.stoped = false;
 
@@ -68,8 +68,8 @@ angular.module('partialsApplication').controller('StoperController', ['BackendSe
 angular.module('partialsApplication').controller('LibraryController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
 
         var self = this;
-        self.identifier = PartialsStateService.identifier;
-        self.filename = PartialsStateService.filename;
+        self.identifier = PartialsStateService.getIdentifier();
+        self.filename = PartialsStateService.getFilename();
         self.uri;
         self.size;
         self.description;
@@ -129,8 +129,8 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
                     break;
             }
 
-            PartialsStateService.filename = name;
-            PartialsStateService.identifier = identifier;
+            PartialsStateService.setFilename(name);
+            PartialsStateService.setIdentifier(identifier);
             
             if(self.showView.length === 0){
                 self.showView = new Array(self.result.data.contents.length);
@@ -169,15 +169,15 @@ angular.module('partialsApplication').controller('RestStatusController', ['Backe
 angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', function (PartialsStateService) {
 
     var self = this;
-    self.url = PartialsStateService.url;
-    self.port = PartialsStateService.port;
+    self.url = PartialsStateService.getURL();
+    self.port = PartialsStateService.getPort();
 
     self.setURL = function(){
-        PartialsStateService.url = self.url;
+        PartialsStateService.setURL(self.url);
     }
 
     self.setPORT = function(){
-        PartialsStateService.port = self.port;
+        PartialsStateService.setPort(self.port);
     }
 
 }]);
@@ -189,7 +189,39 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
             identifier : "",
             filename : "",
             url :"http://bbc1.sics.se",
-            port : "18180"
+            port : "18180",
+
+            setIdentifier : function (id) {
+                this.identifier = id;
+            },
+
+            setFilename : function (name) {
+                this.filename = name;
+            },
+
+            getIdentifier : function () {
+                return this.identifier;
+            },
+
+            getFilename : function () {
+                return this.filename;
+            },
+
+            setPort : function (port) {
+                this.port = port;
+            },
+
+            setURL : function (url) {
+                this.url = url;
+            },
+
+            getURL : function(){
+                return this.url;
+            },
+
+            getPort : function () {
+                return this.port;
+            }
 
         };
 
@@ -202,21 +234,10 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
 
         var service = {
 
-            urlBase: null,
-
-            getBackend: function () {
-                return this.urlBase;
-            },
-
-            setBackend: function (url, port) {
-                this.urlBase = url + ":" + port;
-            },
-
             download: function (json) {
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
-                            url: this.getBackend() + '/torrent/download',
+                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/download',
                             data: json
                         });
             },
@@ -224,7 +245,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
-                            url: this.getBackend() + '/torrent/upload',
+                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/upload',
                             data: json
                         });
             },
@@ -232,7 +253,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
-                            url: this.getBackend() + '/torrent/stop',
+                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/stop',
                             data: json
                         });
             },
@@ -240,14 +261,14 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'GET',
-                            url: this.getBackend() + '/library/contents'
+                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/contents'
                         });
             },
             addFile: function(json){
                 this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
-                            url: this.getBackend() + '/library/add',
+                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/add',
                             data: json
                         });
             },
@@ -255,7 +276,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
-                            url: this.getBackend() + '/library/element',
+                            url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/element',
                             data: json
                         });
             },
@@ -263,7 +284,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                         method: 'GET',
-                        url: this.getBackend() + '/status'
+                        url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/status'
                     });
 
             }
