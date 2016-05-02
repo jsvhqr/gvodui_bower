@@ -185,8 +185,8 @@ angular.module('partialsApplication').factory('partialsServiceStateFactory',[fun
 
             identifier : "",
             filename : "",
-            url :"http://bbc1.sics.se",
-            port : "18180",
+            url :"localhost",
+            port : "8080",
 
             setIdentifier : function (id) {
                 this.identifier = id;
