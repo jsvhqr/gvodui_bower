@@ -187,20 +187,21 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
         var self = this;
         self.identifier = "";
         self.filename = "";
-        self.url = "";
-        self.port = "";
+        self.url = "http://bbc1.sics.se";
+        self.port = "18180";
         
         return self;
         
     }]);
 
 angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
+        var backend = PartialsStateService.url + ":" + PartialsStateService.port;
         var service = {
             download: function (json) {
                 return $http(
                         {
                             method: 'PUT',
-                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/torrent/download',
+                            url: backend + '/torrent/download',
                             data: json
                         });
             },
@@ -208,7 +209,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'PUT',
-                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/torrent/upload',
+                            url: backend + '/torrent/upload',
                             data: json
                         });
             },
@@ -216,7 +217,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'PUT',
-                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/torrent/stop',
+                            url: backend + '/torrent/stop',
                             data: json
                         });
             },
@@ -224,14 +225,14 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'GET',
-                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/library/contents'
+                            url: backend + '/library/contents'
                         });
             },
             addFile: function(json){
                 return $http(
                         {
                             method: 'PUT',
-                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/library/add',
+                            url: backend + '/library/add',
                             data: json
                         });
             },
@@ -239,7 +240,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                         {
                             method: 'PUT',
-                            url: PartialsStateService.url + ':' + PartialsStateService.port + '/library/element',
+                            url: backend + '/library/element',
                             data: json
                         });
             },
@@ -247,7 +248,7 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                 return $http(
                     {
                         method: 'GET',
-                        url: PartialsStateService.url + ':' + PartialsStateService.port + '/status'
+                        url: backend + '/status'
                     });
 
             }
