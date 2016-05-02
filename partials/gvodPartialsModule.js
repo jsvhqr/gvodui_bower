@@ -153,7 +153,7 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
     }]);
 
 
-angular.module('partialsApplication').controller('RestStatusController', ['BackendService', 'PartialsStateService', function (BackendService, PartialsStateService) {
+angular.module('partialsApplication').controller('RestStatusController', ['BackendService', function (BackendService) {
 
     var self = this;
     self.result;
