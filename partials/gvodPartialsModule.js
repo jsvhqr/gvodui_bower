@@ -152,20 +152,6 @@ angular.module('partialsApplication').controller('LibraryController', ['BackendS
 
     }]);
 
-
-angular.module('partialsApplication').controller('RestStatusController', ['BackendService', function (BackendService) {
-
-    var self = this;
-    self.result;
-
-    self.checkStatus = function(){
-        BackendService.checkStatus().then(function(result){
-            self.result = result;
-        })
-    };
-
-}]);
-
 angular.module('partialsApplication').controller('RestHostController', ['PartialsStateService', function (PartialsStateService) {
 
     var self = this;
@@ -179,6 +165,12 @@ angular.module('partialsApplication').controller('RestHostController', ['Partial
     self.setPORT = function(){
         PartialsStateService.setPort(self.port);
     }
+
+    self.checkStatus = function(){
+        BackendService.checkStatus().then(function(result){
+            self.result = result;
+        })
+    };
 
 }]);
 
