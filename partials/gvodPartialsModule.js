@@ -189,70 +189,84 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
         self.filename = "";
         self.url = "http://bbc1.sics.se";
         self.port = "18180";
-        
+
+
         return self;
         
     }]);
 
 angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
 
+        var urlBase;
         var service = {
 
+            getBackend: function () {
+                return urlBase;
+            },
 
-            urlBase : PartialsStateService.url + ":" + PartialsStateService.port,
+            setBackend: function (url, port) {
+                urlBase = url + ":" + port;
+            },
 
             download: function (json) {
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.urlBase + '/torrent/download',
+                            url: this.getBackend() + '/torrent/download',
                             data: json
                         });
             },
             upload: function (json) {
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.urlBase + '/torrent/upload',
+                            url: this.getBackend() + '/torrent/upload',
                             data: json
                         });
             },
             stop: function (json) {
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.urlBase + '/torrent/stop',
+                            url: this.getBackend() + '/torrent/stop',
                             data: json
                         });
             },
             getLibraryContents: function () {
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                         {
                             method: 'GET',
-                            url: this.urlBase + '/library/contents'
+                            url: this.getBackend() + '/library/contents'
                         });
             },
             addFile: function(json){
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.urlBase + '/library/add',
+                            url: this.getBackend() + '/library/add',
                             data: json
                         });
             },
             getLibraryElement: function(json){
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                         {
                             method: 'PUT',
-                            url: this.urlBase + '/library/element',
+                            url: this.getBackend() + '/library/element',
                             data: json
                         });
             },
             checkStatus:  function () {
+                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http(
                     {
                         method: 'GET',
-                        url: this.urlBase + '/status'
+                        url: this.getBackend() + '/status'
                     });
 
             }
