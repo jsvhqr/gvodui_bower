@@ -22,11 +22,12 @@
 
         <div class="form-group" style="padding-left:0;">
 
-            <button class="btn btn-default" ng-click="status.checkStatus()">Check Rest Status</button>
+            <button class="btn btn-default" ng-click="host.checkStatus()">Check Rest Status</button>
 
-            <i style="color:green" class="glyphicon glyphicon-off" ng-if="status.result.alive"></i>
+            <i style="color:green" class="glyphicon glyphicon-off" ng-if="host.result.alive"></i>
 
-            <i style="color:red" class="glyphicon glyphicon-off" ng-if="status.result.dead"></i>
+            <i style="color:red" class="glyphicon glyphicon-off" ng-if="host.result.dead"></i>
+            
         </div>
 
 
