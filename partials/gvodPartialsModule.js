@@ -242,7 +242,6 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                         });
             },
             upload: function (json) {
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
                             url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/upload',
@@ -250,7 +249,6 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                         });
             },
             stop: function (json) {
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
                             url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/torrent/stop',
@@ -258,14 +256,12 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                         });
             },
             getLibraryContents: function () {
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'GET',
                             url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/contents'
                         });
             },
             addFile: function(json){
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
                             url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/add',
@@ -273,7 +269,6 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                         });
             },
             getLibraryElement: function(json){
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                             method: 'PUT',
                             url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/library/element',
@@ -281,7 +276,6 @@ angular.module('partialsApplication').factory('BackendService', ['PartialsStateS
                         });
             },
             checkStatus:  function () {
-                this.setBackend(PartialsStateService.url,PartialsStateService.port);
                 return $http({
                         method: 'GET',
                         url: PartialsStateService.getURL() + ":" + PartialsStateService.getPort() + '/status'
