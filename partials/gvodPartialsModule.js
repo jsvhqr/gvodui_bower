@@ -197,15 +197,16 @@ angular.module('partialsApplication').factory('PartialsStateService',[function()
 
 angular.module('partialsApplication').factory('BackendService', ['PartialsStateService','$http', function ($http,PartialsStateService) {
 
-        var urlBase;
         var service = {
+
+            urlBase: null,
 
             getBackend: function () {
                 return urlBase;
             },
 
             setBackend: function (url, port) {
-                urlBase = url + ":" + port;
+                this.urlBase = url + ":" + port;
             },
 
             download: function (json) {
