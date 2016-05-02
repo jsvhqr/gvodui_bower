@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d9f03fc-226e-49f3-ac6a-4024d9636dda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/state.html" afterPath="$PROJECT_DIR$/partials/state.html" />
-    </list>
+    <list default="true" id="2d9f03fc-226e-49f3-ac6a-4024d9636dda" name="Default" comment="" />
     <ignored path="gvodui_bower.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,8 +91,8 @@
       <file leaf-file-name="state.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partials/state.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="525">
+              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#1;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -313,12 +311,12 @@
       <workItem from="1461924391245" duration="5383000" />
       <workItem from="1462093016385" duration="3708000" />
       <workItem from="1462104363007" duration="664000" />
-      <workItem from="1462177900575" duration="8654000" />
+      <workItem from="1462177900575" duration="8715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18482000" />
+    <option name="totallyTimeSpent" value="18543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
@@ -795,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/partials/state.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state relative-caret-position="525">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#i#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#1;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
